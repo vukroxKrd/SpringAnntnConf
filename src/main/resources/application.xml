@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+    <bean id="pointCoords" class="ru.brown.Coords">
+        <constructor-arg value="5"/>
+        <constructor-arg value="5"/>
+    </bean>
+
+    <bean id="pointBean" class="ru.brown.Point">
+        <constructor-arg ref="pointCoords"/>
+    </bean>
+
+    <bean id="circleCoords" class="ru.brown.Coords">
+        <constructor-arg value="3"/>
+        <constructor-arg value="3"/>
+    </bean>
+
+    <bean id="circleBean" class="ru.brown.Circle">
+        <constructor-arg ref="pointCoords"/>
+        <constructor-arg value="3"/>
+    </bean>
+    <bean id="sceneCoordinatesBean" class="ru.brown.Coords">
+        <constructor-arg value="10"/>
+        <constructor-arg value="10"/>
+    </bean>
+    <bean id="sceneBean" class="ru.brown.GraphicalScene" init-method="setDefaultScene">
+        <constructor-arg ref="sceneCoordinatesBean"/>
+    </bean>
+</beans>
