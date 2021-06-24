@@ -46,7 +46,7 @@ public class GraphicalScene  extends GraphicalObject{
 
     }
 
-    private GraphicalScene(Coords coords, String color) {
+    public GraphicalScene(Coords coords, String color) {
         this.coords = coords;
         this.color = color;
     }
